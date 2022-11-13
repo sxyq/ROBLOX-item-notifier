@@ -96,7 +96,7 @@ setInterval( async () => {
             title: itemName,
             subtitle: `Price: ${itemPrice}`,
             message: desc,
-            icon: `C:\\Users\\PC\\Documents\\robloxPlusRemastered\\tempIMG\\picture.png`,
+            icon: `${mainFolder}\\tempIMG\\picture.png`,
             sound: true,
         }
         
