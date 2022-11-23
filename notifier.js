@@ -45,23 +45,19 @@ const getApi = async (a) => {
 }
 // --------------------download image-------------
 
-
-    const downloadFile = async (a, b) => {
-
-
-        const localFilePath = path.resolve(mainFolder, b, fileName)
-
-        const resp = await axios({
-            method: 'get',
-            url: a,
-            responseType: 'stream',
-        });
-        
-        const w = resp.data.pipe(fs.createWriteStream(localFilePath));
-        w.on('finish', () => {
-            console.log('downloaded stuff');
-        })
-    }
+const downloadFile = async (a, b) => {
+    const localFilePath = path.resolve(mainFolder, b, fileName)
+    const resp = await axios({
+        method: 'get',
+        url: a,
+        responseType: 'stream',
+    });
+    
+    const w = resp.data.pipe(fs.createWriteStream(localFilePath));
+    w.on('finish', () => {
+        console.log('downloaded stuff');
+    })
+}
 // --------------------notifiier-------------
 
 const notif = (notification) => {
